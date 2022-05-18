@@ -1,0 +1,49 @@
+########### Documentação de apoio: ########### 
+http://epistasislab.github.io/tpot/installing/
+https://auto.gluon.ai/stable/index.html
+https://automl.github.io/auto-sklearn/master/
+
+########### Exemplo de uso: ########### 
+1- git clone https://github.com/automl/auto-sklearn.git
+2- cd examples
+3- pip install auto-sklearn
+4- mover o código python que voce criou para examples e executar
+(Ex.:python3 auto_sklearn.py)
+
+########### Testado no ambiente: ########### 
+Python version: 3.9.2
+Dataset [Subset Drebin_215 com 113 permissões] 
+Kernel:Linux-5.10.0-kali9-amd64-x86_64-with-glibc2.32
+Architecture:          x86_64
+Model name:            11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+MemTotal:        8148336 kB
+MemFree:         5283852 kB
+MemAvailable:    7433688 kB
+
+########### auto-sklearn ##########
+Accuracy: 0.9576783555018138
+Precision: 0.9631728045325779
+Recall: 0.9214092140921409
+F1_score: 0.9418282548476454
+Tempo 00:01:55
+
+########### Auto_Gluon ###########
+Accuracy: 0.9552599758162031
+Precision: 0.9618668184405236
+Recall: 0.9159891598915989
+F1_score: 0.9383675735702387
+Tempo: 00:02:00
+
+########### Tpot ###########
+Accuracy: 0.954856912535268
+Precision: 0.9576510446075663
+Recall: 0.9192411924119241
+F1_score: 0.9380530973451328
+Tempo 00:07:10
+
+########## QuickAutoML ###########
+Accuracy score: 0.9028995279838166
+Precision: 0.9102564102564102
+Recall: 0.71
+F1_score: 0.797752808988764
+Tempo 00:01:27
