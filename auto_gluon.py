@@ -3,7 +3,7 @@ import pandas as pd
 import timeit
 from autogluon.tabular import TabularDataset, TabularPredictor
 from sklearn.model_selection import train_test_split 
-from datetime import datetime
+from time import time
 import sys
 from os.path import exists, basename
 
@@ -34,4 +34,4 @@ pd.DataFrame({
     "f1_score": "FALTA CALCULAR",
     "dataset" : dataset_name,
     "execution_time" : time_str
-}, index=[0]).to_csv(f"result-autogluon-{dataset_name}-{datetime.now()}", index=False)
+}, index=[0]).to_csv(f"result-autogluon-{int(time())}-{dataset_name}", index=False)
