@@ -14,8 +14,7 @@ fi
 for DATASET in $*
 do
         echo "Begin tests with dataset $DATASET"
-        ## TO DO: passar o dataset como argumento para tpot_test.py; o script deve ser modificado para aceitar o parametro como os demais
-        $TPOT_PYTHON tpot_test.py > results-tpot.txt
+        $TPOT_PYTHON tpot_test.py $DATASET
         $AUTOGLUON_PYTHON auto_gluon.py $DATASET
         $AUTO_SKLEARN_PYTHON auto_sklearn.py $DATASET
 done
