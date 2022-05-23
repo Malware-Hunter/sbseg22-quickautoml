@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 import timeit
 import sys
-from datetime import datetime
+from time import time
 from os.path import exists, basename
 
 def parse_dataset():
@@ -38,4 +38,4 @@ pd.DataFrame({
     "f1_score": f1_score(y_test, predictions),
     "dataset" : dataset_name,
     "execution_time" : time_str
-}, index=[0]).to_csv(f"result-tpot-{dataset_name}-{datetime.now()}", index=False)
+}, index=[0]).to_csv(f"result-tpot-{time()}-{dataset_name}", index=False)
