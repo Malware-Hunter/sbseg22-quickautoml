@@ -17,6 +17,7 @@ PIP=./env-autogluon/bin/pip3
 $PIP install -q setuptools wheel
 $PIP install -q torch==1.10.1+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
 $PIP install -q autogluon.tabular
+$PIP install -q pandas scikit-learn 
 echo Done
 
 echo Installing auto-sklearn...
@@ -25,5 +26,6 @@ PIP=./env-auto-sklearn/bin/pip3
 
 $PIP install -q setuptools wheel
 $PIP install -q auto-sklearn
+$PIP install -q pandas scikit-learn
 echo Done
 
