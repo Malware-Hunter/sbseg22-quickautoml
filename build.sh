@@ -29,3 +29,26 @@ $PIP install -q auto-sklearn
 $PIP install -q pandas scikit-learn
 echo Done
 
+echo Installing quickautoml...
+
+github_update_repo() {
+    CHECK_GIT=$(which git)
+    [ "$CHECK_GIT" != "" ] || { printf "\nERRO: instale o \"git\" primeiro (e.g., sudo apt -y install git)\n\n"; exit 1; }
+    if [ ! -d $1 ] 
+    then
+        # [IMPORTANTE]
+        # Clonar com HTTPS para não precisar usar credenciais 
+        git clone https://github.com/Malware-Hunter/$1.git
+        ( cd $1; git config pull.rebase false; )
+    else 
+        pushd $1
+        git pull
+        popd
+    fi
+}
+
+github_update_repo quickautoml
+cp ./quickautoml_test.py quickautoml
+cd quickautoml
+sh distribute.sh
+python3 quickautoml_test.py
