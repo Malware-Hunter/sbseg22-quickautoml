@@ -51,4 +51,3 @@ github_update_repo quickautoml
 cp ./quickautoml_test.py quickautoml
 cd quickautoml
 sh distribute.sh
-python3 quickautoml_test.py
