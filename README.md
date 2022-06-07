@@ -9,7 +9,7 @@ Repositório para manter códigos de experimentos de ferramentas de AutoML para 
 ```
 { "features": { "buildkit": true } }
 ```
-
+Após isso, é necessário reiniciar o daemon do docker (e.g.: `sudo systemctl restart docker`).
 ## Como rodar
 
 Para rodar o teste com uma ferramenta sobre os datasets do diretório `datasets`, substitua os parâmetros e use o seguinte comando:
