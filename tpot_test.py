@@ -4,8 +4,11 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 import timeit
 import sys
-from time import time
 from os.path import exists, basename
+from datetime import datetime
+
+def get_current_datetime(format="%Y%m%d%H%M%S"):
+    return datetime.now().strftime(format)
 
 def parse_dataset():
     if(not exists(sys.argv[1])):
@@ -38,4 +41,4 @@ pd.DataFrame({
     "f1_score": f1_score(y_test, predictions),
     "dataset" : dataset_name,
     "execution_time" : time_str
-}, index=[0]).to_csv(f"result-tpot-{int(time())}-{dataset_name}", index=False)
+}, index=[0]).to_csv(f"result-tpot-{get_current_datetime()}-{dataset_name}", index=False)

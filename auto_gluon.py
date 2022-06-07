@@ -3,9 +3,12 @@ import pandas as pd
 import timeit
 from autogluon.tabular import TabularPredictor
 from sklearn.model_selection import train_test_split 
-from time import time
 import sys
 from os.path import exists, basename
+from datetime import datetime
+
+def get_current_datetime(format="%Y%m%d%H%M%S"):
+    return datetime.now().strftime(format)
 
 def parse_dataset():
     if(not exists(sys.argv[1])):
@@ -34,4 +37,4 @@ results = pd.DataFrame({
     "dataset" : dataset_name,
     "execution_time" : time_str
 }, index=[0])
-results.to_csv(f"result-autogluon-{int(time())}-{dataset_name}", index=False)
+results.to_csv(f"result-autogluon-{get_current_datetime()}-{dataset_name}", index=False)
