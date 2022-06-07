@@ -1,17 +1,15 @@
 #!/bin/bash
 
 TPOT_PYTHON=./env-tpot/bin/python3
-AUTOGLUON_PYTHON=./env-autogluon/bin/python3
-AUTO_SKLEARN_PYTHON=./env-auto-sklearn/bin/python3 
-if ! [[ -f $TPOT_PYTHON ]] || ! [[ -f $AUTOGLUON_PYTHON ]] || ! [[ -f $AUTO_SKLEARN_PYTHON ]] || ! [[ -d quickautoml ]]
+if ! [[ -f $TPOT_PYTHON ]]
 then
-        echo "Can't find virtual environments, please make sure to run the build script first"
+        echo "Can't find python3 at '$TPOT_PYTHON', please make sure to run the build script first"
         exit 1
 fi
 
-[[ $1 ]] && [[ -f $1 ]] || echo "Uso: $0 DATASET [DATASET]..."
-
-for DATASET in $*
+bash setup_datasets.sh
+[[ $? != 0 ]] && exit 1
+for DATASET in datasets/*.csv
 do
         echo "Begin tests with dataset $DATASET"
         $TPOT_PYTHON tpot_test.py $DATASET
