@@ -10,6 +10,8 @@ WORKDIR /home/automl
 
 COPY build.sh run.sh *.py *.csv ./
 
-COPY datasets/ ./
+RUN mkdir -p /home/automl/datasets
+
+COPY datasets/ ./datasets/
 
 RUN ./build.sh
