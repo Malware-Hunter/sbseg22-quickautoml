@@ -2,15 +2,22 @@
 
 Repositório para manter códigos de experimentos de ferramentas de AutoML para a SBSEG22.
 
-## Como rodar os testes
+## Como instalar 
+- Instale o [docker](https://docs.docker.com/engine/install/) em sua máquina. 
 
-Após instalar o [docker](https://docs.docker.com/engine/install/) em sua máquina, siga os passos a seguir para criar e iniciar um container com os ambientes virtuais preparados para a execução dos testes das ferramentas: 
+- Habilite a opção `buildkit` no arquivo `/etc/docker/daemon.json` (crie-o se não existir):
 ```
-# 1) Crie a imagem:
-docker build . -t=automl
-
-# 2) Inicie um novo container a partir da image recém criada e entre nele:
-docker run -it automl bash
+{ "features": { "buildkit": true } }
 ```
 
-Pronto, agora você deve estar no diretório "`/home/automl`" no container. Você pode rodar os testes executando o script `run.sh`, e.g.: `./run.sh <dataset1> <dataset2> ... <datasetN>`.
+## Como rodar
+
+Para rodar o teste com uma ferramenta sobre os datasets do diretório `datasets`, substitua os parâmetros e use o seguinte comando:
+```
+## PARÂMETROS:
+## <output_dir> -- diretório para salvar resultados na máquina host (não no container)
+## <tool>       -- "all" para rodar todas as ferramentas em paralelo no container ou apenas uma delas: "quick","auto_gluon", "auto_sklearn" ou "tpot".
+
+## COMANDO:
+docker build -o <output_dir> . --build-arg tool=<tool>
+```
