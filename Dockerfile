@@ -8,9 +8,9 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /home/automl
 
-COPY build.sh run.sh *.py *.csv ./
+COPY *.sh *.py *.csv ./
 
-RUN mkdir -p /home/automl/datasets
+RUN mkdir -p ./datasets
 
 COPY datasets/ ./datasets/
 
