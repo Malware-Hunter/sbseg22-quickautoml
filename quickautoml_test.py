@@ -5,7 +5,10 @@ import pandas as pd
 import timeit
 from os.path import exists, basename
 import sys
-from time import time
+from datetime import datetime
+
+def get_current_datetime(format="%Y%m%d%H%M%S"):
+    return datetime.now().strftime(format)
 
 def parse_dataset():
     if(not exists(sys.argv[1])):
@@ -40,4 +43,4 @@ pd.DataFrame({
     "f1_score": f1_score(y_test, predictions),
     "dataset" : dataset_name,
     "execution_time" : time_str
-}, index=[0]).to_csv(f"result-quickautoml-{int(time())}-{dataset_name}", index=False)
+}, index=[0]).to_csv(f"result-quickautoml-{get_current_datetime()}-{dataset_name}", index=False)
