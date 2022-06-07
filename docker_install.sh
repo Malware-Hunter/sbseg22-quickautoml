@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
 # TZ: config && install
 # set noninteractive installation
 export DEBIAN_FRONTEND=noninteractive
