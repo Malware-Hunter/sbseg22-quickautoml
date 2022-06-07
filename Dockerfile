@@ -4,15 +4,12 @@ RUN apt-get update && apt-get install -y \
 	python3-pip \
 	python3.8-venv \
 	git \
-	vim \
-	openssh-server
-
-RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-RUN sed -i 's/^.*AuthorizedKeysFile.*$/AuthorizedKeysFile	.ssh/authorized_keys/' /etc/ssh/sshd_config
-RUN sed -i 's/^.*PubkeyAuthentication .*$/PubkeyAuthentication yes/' /etc/ssh/sshd_config
+	vim 
 
 WORKDIR /home/automl
 
+ADD docker_install.sh /docker_install.sh
+RUN /docker_install.sh
 RUN useradd -s /bin/bash --home-dir /home/automl automl
 COPY ssh_key_docker_automl.pub /home/automl/.ssh/authorized_keys
 RUN chown -R automl:automl /home/automl
