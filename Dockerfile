@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /home/automl
 
-COPY build.sh run.sh *.py *.csv ./
+COPY build.sh run-server9.sh run-server10.sh *.py *.csv ./
 
 COPY datasets/ ./
 
