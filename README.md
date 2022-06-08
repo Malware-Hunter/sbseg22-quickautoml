@@ -17,5 +17,5 @@ Pronto, agora você pode rodar os testes a partir do script `docker_run.sh`:
 ```
 ./docker_run.sh <shared-dir> <run_script.sh> <dataset1> <dataset2> ... <datasetN>
 
-## [IMPORTANTE]: <shared-dir> deve ser um caminho absoluto para um diretório existente na máquina host (não no container)
+## [IMPORTANTE]: <shared-dir> deve ser um caminho absoluto para um diretório existente na máquina host (não no container). Se você for rodar docker_run.sh mais de uma vez, então use um diretório diferente em cada vez.
 ```
