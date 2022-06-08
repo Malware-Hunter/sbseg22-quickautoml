@@ -9,7 +9,7 @@ RUN apt-get update -q && apt-get install -y -q \
 	unzip \
 	unrar
 
-WORKDIR /container
+WORKDIR /home/automl
 
 COPY *.sh *.py ./
 COPY datasets ./datasets
