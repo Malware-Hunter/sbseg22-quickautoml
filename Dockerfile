@@ -1,6 +1,6 @@
-FROM ubuntu:20.04 as main-stage
+FROM ubuntu:20.04
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update -q && apt-get install -y -q \
         python3.8 \
         python3-pip \
         python3.8-venv \
@@ -9,17 +9,10 @@ RUN apt-get update && apt-get install -y \
 	unzip \
 	unrar
 
-WORKDIR /automl
+WORKDIR /container
 
 COPY *.sh *.py ./
+COPY datasets ./datasets
+RUN ./setup_datasets.sh
 
-RUN mkdir -p ./datasets
-
-COPY datasets/ ./datasets/
-
-ARG tool="all"
 RUN ./build.sh
-RUN ./run_${tool}.sh
-
-FROM scratch AS export-stage
-COPY --from=main-stage /automl/result*.csv .
