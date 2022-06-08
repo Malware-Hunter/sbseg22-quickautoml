@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[[ $1 && $2 && -f $2 && $3 && -f $3 ]] || { echo "Uso: $0 <shared-dir> <run_script.sh> <dataset1> <dataset2> ... <datasetN>
+[[ $1 && $2 && -f $2 && $3 ]] || { echo "Uso: $0 <shared-dir> <run_script.sh> <dataset1> <dataset2> ... <datasetN>
 
     exemplo: $0 /home/<user>/shared-dir run_quick.sh datasets/androcrawl_limpo.csv">&2; exit 1; }
 
