@@ -7,9 +7,8 @@ then
         exit 1
 fi
 
-bash setup_datasets.sh
-[[ $? != 0 ]] && exit 1
-for DATASET in datasets/*.csv
+[[ $1 ]] && [[ -f $1 ]] || echo "Uso: $0 DATASET [DATASET]...">&2 && exit 1
+for DATASET in $*
 do
         echo "Begin tests with dataset $DATASET"
         $TPOT_PYTHON tpot_test.py $DATASET
