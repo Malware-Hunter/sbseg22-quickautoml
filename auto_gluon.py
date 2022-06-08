@@ -37,4 +37,4 @@ results = pd.DataFrame({
     "dataset" : dataset_name,
     "execution_time" : time_str
 }, index=[0])
-results.to_csv(f"result-autogluon-{get_current_datetime()}-{dataset_name}", index=False)
+results.to_csv(f"./results/autogluon-{get_current_datetime()}-{dataset_name}", index=False)
