@@ -5,6 +5,7 @@
     exemplo: $0 output-dir-1 run_quick.sh datasets/androcrawl_limpo.csv">&2; exit 1; }
 
 SHARED_DIR=$1
+[ -d $SHARED_DIR ] || { mkdir -p $SHARED_DIR; }
 shift
 
 SCRIPT=$1
