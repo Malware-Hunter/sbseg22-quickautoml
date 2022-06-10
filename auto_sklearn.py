@@ -46,4 +46,4 @@ pd.DataFrame({
     "f1_score": sklearn.metrics.f1_score(y_test, predictions),
     "dataset" : dataset_name,
     "execution_time" : time_str
-}, index=[0]).to_csv(f"result-auto-sklearn-{get_current_datetime()}-{dataset_name}", index=False)
+}, index=[0]).to_csv(f"./results/auto-sklearn-{get_current_datetime()}-{dataset_name}", index=False)

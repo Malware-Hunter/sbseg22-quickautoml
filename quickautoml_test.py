@@ -43,4 +43,4 @@ pd.DataFrame({
     "f1_score": f1_score(y_test, predictions),
     "dataset" : dataset_name,
     "execution_time" : time_str
-}, index=[0]).to_csv(f"result-quickautoml-{get_current_datetime()}-{dataset_name}", index=False)
+}, index=[0]).to_csv(f"./results/quickautoml-{get_current_datetime()}-{dataset_name}", index=False)
