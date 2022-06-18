@@ -1,0 +1,2 @@
+accuracy,precision,recall,f1_score,dataset,execution_time
+0.7793345008756567,0.15384615384615385,0.017094017094017096,0.030769230769230774,motodroid_intents.csv,00:00:53

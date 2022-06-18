@@ -1,0 +1,2 @@
+accuracy,precision,recall,f1_score,dataset,execution_time
+0.9599332220367279,0.9715359828141783,0.9767818574514039,0.974151857835218,drebin215_limpo.csv,00:02:25
