@@ -1,0 +1,2 @@
+accuracy,precision,recall,f1_score,dataset,execution_time
+0.9885345529728714,0.9661654135338346,0.9228007181328546,0.9439853076216713,androcrawl_limpo.csv,00:31:58
