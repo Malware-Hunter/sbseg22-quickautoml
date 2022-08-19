@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from pprint import pprint
 import timeit
 import sklearn.datasets
